@@ -5,9 +5,7 @@
 <%= image.className %> = <%= image.className %>-x <%= image.className %>-y <%= image.className %>-width <%= image.className %>-height
 <% }); %>
 <%= spriteName %>-image()
-    background-image url('<%= options.spritePath %>')<% if (options.pixelRatio !== 1) { %>
-<%= spriteName %>-size()
-    background-size <%= getCSSValue(layout.width) %> <%= getCSSValue(layout.height) %><% } %>
+    background-image url('<%= options.spritePath %>')
 <%= spriteName %>-position($sprite)
     background-position $sprite[0] $sprite[1]
 <%= spriteName %>-width($sprite)
@@ -15,8 +13,7 @@
 <%= spriteName %>-height($sprite)
     height $sprite[3]
 <%= spriteName %>($sprite)
-    <%= spriteName %>-image()<% if (options.pixelRatio !== 1) { %>
-    <%= spriteName %>-size()<% } %>
+    <%= spriteName %>-image()
     <%= spriteName %>-position($sprite)
     <%= spriteName %>-width($sprite)
     <%= spriteName %>-height($sprite)

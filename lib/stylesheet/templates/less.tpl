@@ -6,10 +6,7 @@
 <% }); %>
 .<%= spriteName %>-image() {
     background-image: url('<%= options.spritePath %>');
-}<% if (options.pixelRatio !== 1) { %>
-.<%= spriteName %>-size() {
-    background-size: <%= getCSSValue(layout.width) %> <%= getCSSValue(layout.height) %>;
-}<% } %>
+}
 .<%= spriteName %>-position(@sprite) {
     background-position: extract(@sprite, 1) extract(@sprite, 2);
 }
@@ -20,8 +17,7 @@
     height: extract(@sprite, 4);
 }
 .<%= spriteName %>(@sprite) {
-    .<%= spriteName %>-image();<% if (options.pixelRatio !== 1) { %>
-    .<%= spriteName %>-size();<% } %>
+    .<%= spriteName %>-image();
     .<%= spriteName %>-position(@sprite);
     .<%= spriteName %>-width(@sprite);
     .<%= spriteName %>-height(@sprite);

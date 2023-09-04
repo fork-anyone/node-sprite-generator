@@ -6,10 +6,7 @@ $<%= image.className %>: $<%= image.className %>-x $<%= image.className %>-y $<%
 <% }); %>
 @mixin <%= spriteName %>-image {
   background-image: url("<%= options.spritePath %>");
-}<% if (options.pixelRatio !== 1) { %>
-@mixin <%= spriteName %>-size {
-  background-size: <%= getCSSValue(layout.width) %> <%= getCSSValue(layout.height) %>;
-}<% } %>
+}
 @mixin <%= spriteName %>-position($sprite) {
   background-position: nth($sprite, 1) nth($sprite, 2);
 }
@@ -20,8 +17,7 @@ $<%= image.className %>: $<%= image.className %>-x $<%= image.className %>-y $<%
   height: nth($sprite, 4);
 }
 @mixin <%= spriteName %>($sprite) {
-  @include <%= spriteName %>-image;<% if (options.pixelRatio !== 1) { %>
-  @include <%= spriteName %>-size;<% } %>
+  @include <%= spriteName %>-image;
   @include <%= spriteName %>-position($sprite);
   @include <%= spriteName %>-width($sprite);
   @include <%= spriteName %>-height($sprite);
